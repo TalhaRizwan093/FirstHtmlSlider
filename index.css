@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  background-color: rgb(206, 206, 206);
+}
+
+.image_ {
+  max-height: 500px;
+  width: 100%;
+}
+
+.wrapper {
+  width: 220px;
+  height: 220px;
+}
+
+@media screen and (min-width: 992px) {
+  .row_pc :nth-child(1) {
+    order: 2;
+  }
+  .row_pc :nth-child(2) {
+    order: 1;
+  }
+}

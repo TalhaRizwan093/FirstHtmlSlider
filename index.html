@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>Assignemnt 2</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col p-3 m-3 title">
+          <h1>Animal History</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col p-3">
+          <img id="image" class="image_" src="./images/giraffe.png" alt="_" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button id="play" onclick="play()">Play</button>
+          <button id="pause" onclick="pause()">Pause</button>
+        </div>
+      </div>
+      <div class="row row_pc px-lg-5">
+        <div class="col-12 col-md-4 p-3">
+          <div class="wrapper">
+            <img src="./images/giraffe2.png" alt="" width="100%" />
+          </div>
+        </div>
+        <div class="col-12 col-md-8 p-3">
+          <h1>Zebras</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            ducimus distinctio ratione ipsum, nesciunt consectetur, facilis
+            nulla quam cupiditate nam, sapiente voluptates ad sunt quas mollitia
+            quia aliquam eius ex? Lorem ipsum dolor, sit amet consectetur
+            adipisicing elit. Sapiente facilis laboriosam magni odio quibusdam
+            accusantium, pariatur nulla voluptatum corrupti ipsam eveniet eum.
+            Dicta ad, ipsa qui odit soluta dolore molestias. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Perferendis eius velit nobis
+            nostrum veniam nulla autem, aut sit deserunt obcaecati, nisi
+            exercitationem suscipit officia amet, nam voluptatem sequi.
+            Explicabo, ad. Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Excepturi ratione id sunt est esse aliquam facere mollitia,
+            quam eligendi repellat officiis accusamus odio fugit labore. Quos
+            minima tenetur eaque impedit.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var myVar = setInterval(slider, 3000);
+      var img_list = [
+        "./images/giraffe.png",
+        "./images/horse.jpg",
+        "./images/lion.jpg",
+      ];
+      var i = 0;
+      function slider() {
+        document.getElementById("image").src = img_list[i];
+        i++;
+        if (i == img_list.length) {
+          i = 0;
+        }
+      }
+
+      function pause() {
+        document.getElementById("pause").disabled = true;
+        document.getElementById("play").disabled = false;
+        clearInterval(myVar);
+      }
+      function play() {
+        document.getElementById("play").disabled = true;
+        document.getElementById("pause").disabled = false;
+        myVar = setInterval(slider, 3000);
+      }
+    </script>
+  </body>
+</html>
