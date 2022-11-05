@@ -28,6 +28,7 @@
       <div class="row">
         <div class="col p-3">
           <img id="image" class="image_" src="./images/giraffe.png" alt="_" />
+          <h1 id="animal_name" class="thumbnail">Giraffe</h1>
         </div>
       </div>
       <div class="row">
@@ -66,14 +67,16 @@
 
     <script>
       var myVar = setInterval(slider, 3000);
+      document.getElementById("play").disabled = true;
       var img_list = [
-        "./images/giraffe.png",
-        "./images/horse.jpg",
-        "./images/lion.jpg",
+        { source: "./images/giraffe.png", name: "Giraffe" },
+        { source: "./images/horse.jpg", name: "Horse" },
+        { source: "./images/lion.jpg", name: "Lion" },
       ];
       var i = 0;
       function slider() {
-        document.getElementById("image").src = img_list[i];
+        document.getElementById("image").src = img_list[i].source;
+        document.getElementById("animal_name").innerHTML = img_list[i].name;
         i++;
         if (i == img_list.length) {
           i = 0;

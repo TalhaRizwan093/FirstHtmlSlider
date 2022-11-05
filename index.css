@@ -26,3 +26,10 @@
     order: 1;
   }
 }
+
+.thumbnail {
+  position: absolute;
+  margin-top: -15%;
+  margin-left: 45%;
+  color: white;
+}
